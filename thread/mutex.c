@@ -71,7 +71,9 @@ int main()
     pthread_create(&tpid2, NULL, thread2, NULL);
     pthread_create(&tpid3, NULL, thread3, NULL);
 
-    sleep(10);
+    pthread_join(tpid1, NULL);
+    pthread_join(tpid2, NULL);
+    pthread_join(tpid3, NULL);
     
     return 0;
 }
